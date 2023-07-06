@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using ATM_Machine.db;
 
 namespace ATM_Machine
 {
@@ -7,6 +9,8 @@ namespace ATM_Machine
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var connection = new DBConnector();
+            Console.WriteLine(connection);
         }
     }
 }

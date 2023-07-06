@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marcos Oliveira\\Source\\Repos\\ATM-Machine\\ATM-Machine\\ATM-Machine.csproj",
+      "projectUniqueName": "C:\\Users\\Marcos Oliveira\\source\\repos\\ATM-Machine\\ATM-Machine.csproj",
       "projectName": "ATM-Machine",
-      "projectPath": "C:\\Users\\Marcos Oliveira\\Source\\Repos\\ATM-Machine\\ATM-Machine\\ATM-Machine.csproj",
+      "projectPath": "C:\\Users\\Marcos Oliveira\\source\\repos\\ATM-Machine\\ATM-Machine.csproj",
       "packagesPath": "C:\\Users\\Marcos Oliveira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marcos Oliveira\\Source\\Repos\\ATM-Machine\\ATM-Machine\\obj\\",
+      "outputPath": "C:\\Users\\Marcos Oliveira\\source\\repos\\ATM-Machine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Marcos Oliveira\\AppData\\Roaming\\NuGet\\NuGet.Config",

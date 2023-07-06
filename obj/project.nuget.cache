@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HEx1vfCqixJX8NiDxsOihTAvJZs+OzTDuLm6biaaOggYW7HY88rs1k1qDZlXyX24CFz5jqj6a8hXRWfeE5rskw==",
+  "dgSpecHash": "aEFzrqnI4BWgvV/oLPPlrXuSePusJ4R6abQF3qgswfA9HKRmMDweJklu/6+AAuP2kV2xWKynIo9vZz7XBN4hCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Marcos Oliveira\\Source\\Repos\\ATM-Machine\\ATM-Machine\\ATM-Machine.csproj",
+  "projectFilePath": "C:\\Users\\Marcos Oliveira\\source\\repos\\ATM-Machine\\ATM-Machine.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
