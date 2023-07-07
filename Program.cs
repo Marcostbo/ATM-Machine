@@ -9,8 +9,8 @@ namespace ATM_Machine
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var connection = new DBConnector();
-            Console.WriteLine(connection);
+            var db = new DBConnector();
+            Console.WriteLine(db);
         }
     }
 }

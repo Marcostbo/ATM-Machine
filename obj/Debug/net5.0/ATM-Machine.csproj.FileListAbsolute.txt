@@ -30,3 +30,6 @@ C:\Users\Marcos Oliveira\Source\Repos\ATM-Machine\obj\Debug\net5.0\ATM-Machine.d
 C:\Users\Marcos Oliveira\Source\Repos\ATM-Machine\obj\Debug\net5.0\ref\ATM-Machine.dll
 C:\Users\Marcos Oliveira\Source\Repos\ATM-Machine\obj\Debug\net5.0\ATM-Machine.pdb
 C:\Users\Marcos Oliveira\Source\Repos\ATM-Machine\obj\Debug\net5.0\ATM-Machine.genruntimeconfig.cache
+C:\Users\Marcos Oliveira\source\repos\ATM-Machine\bin\Debug\net5.0\ExcelDataReader.dll
+C:\Users\Marcos Oliveira\source\repos\ATM-Machine\obj\Debug\net5.0\ATM-Machine.csproj.CopyComplete
+C:\Users\Marcos Oliveira\source\repos\ATM-Machine\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
