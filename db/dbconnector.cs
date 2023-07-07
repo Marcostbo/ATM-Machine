@@ -18,13 +18,6 @@ namespace ATM_Machine.db
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             var reader = this.getExcelReader(path: this.url);
-            var workSheet = reader.AsDataSet().Tables[0];
-            var rows = from DataRow a in workSheet.Rows select a;
-            foreach (DataRow row in rows)
-            {
-                Console.WriteLine("{0}, {1}", row[0], row[1]);
-            }
-            Console.WriteLine(rows.ToArray());
             this.connection = reader;
         }
 

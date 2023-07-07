@@ -1,6 +1,12 @@
-﻿using System;
+﻿using ATM_Machine.db;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.IO;
-using ATM_Machine.db;
+using ExcelDataReader;
+using System.Data;
 
 namespace ATM_Machine
 {
@@ -8,9 +14,27 @@ namespace ATM_Machine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int selectedUserId = 13;
+
             var db = new DBConnector();
-            Console.WriteLine(db);
+            var reader = db.connection;
+            var workSheet = reader.AsDataSet().Tables[0];
+            var rows = from DataRow a in workSheet.Rows select a;
+
+            DataRow currentRow;
+            int count = 0;
+
+            foreach(DataRow row in rows)
+            {
+                if (count > 0)
+                {
+                    if (Convert.ToInt32(row[0]) == selectedUserId)
+                    {
+                        currentRow = row;
+                    }
+                }
+                count++;
+            }
         }
     }
 }
