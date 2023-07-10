@@ -15,6 +15,11 @@ namespace ATM_Machine
         static void Main(string[] args)
         {
             int selectedUserId = 13;
+            int accountCode = 17598;
+            int agencyCode = 5995;
+            int userPin = 123123;
+            string action = "Deposit";
+            float amount = 1000;
 
             var db = new DBConnector();
             var reader = db.connection;
