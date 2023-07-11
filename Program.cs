@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using ExcelDataReader;
 using System.Data;
 
@@ -28,10 +25,29 @@ namespace ATM_Machine
             var workSheet = reader.AsDataSet().Tables[0];
             var rows = from DataRow a in workSheet.Rows select a;
 
+            // Get logged user instance
+            User currentUser = GetLoggedUser(rows: rows, selectedUserId: selectedUserId, userPin: userPin);
+
+            // Perform action for user instance
+            string result = currentUser.PerformAction(action: action, amount: amount);
+            Console.WriteLine(result);
+        }
+
+        static bool IsAuth(int password_input, int password)
+        {
+            if (password_input == password)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static User? GetLoggedUser(IEnumerable<DataRow> rows, int selectedUserId, int userPin)
+        {
             DataRow currentRow;
             int count = 0;
 
-            foreach(DataRow row in rows)
+            foreach (DataRow row in rows)
             {
                 if (count > 0)
                 {
@@ -52,26 +68,19 @@ namespace ATM_Machine
                                     availableBalance: Convert.ToDouble(row[6])
                                 );
                             Console.WriteLine("User " + currentUser.fullName + " is authenticated");
-                            string result = currentUser.PerformAction(action: action, amount: amount);
-                            Console.WriteLine(result);
+                            return currentUser;
                         }
                         else
                         {
-                            Console.WriteLine("User is not authenticated");
+                            Console.WriteLine("Wrong password. User is not authenticated");
+                            return null;
                         }
                     }
                 }
                 count++;
             }
-        }
-
-        static bool IsAuth(int password_input, int password)
-        {
-            if (password_input == password)
-            {
-                return true;
-            }
-            return false;
+            Console.WriteLine("User not found. Invalid user input");
+            return null;
         }
     }
 }
