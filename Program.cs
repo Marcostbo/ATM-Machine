@@ -36,10 +36,28 @@ namespace ATM_Machine
                     if (Convert.ToInt32(row[0]) == selectedUserId)
                     {
                         currentRow = row;
+                        int userPassword = Convert.ToInt32(row[3]);
+                        if (isAuth(password_input: userPin, password: userPassword))
+                        {
+                            Console.WriteLine("User is authenticated");
+                        }
+                        else
+                        {
+                            Console.WriteLine("User is not authenticated");
+                        }
                     }
                 }
                 count++;
             }
+        }
+
+        static bool isAuth(int password_input, int password)
+        {
+            if (password_input == password)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
