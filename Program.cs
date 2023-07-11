@@ -15,12 +15,13 @@ namespace ATM_Machine
         static void Main(string[] args)
         {
             // User data input
-            int selectedUserId = 13;
+            int selectedUserId = 1;
             int userPin = 123123;
             
             // Action input
             string action = "Deposit";
-            float amount = 1000;
+            // string action = "Withdrawal";
+            float amount = 2000;
 
             var db = new DBConnector();
             var reader = db.connection;
@@ -41,7 +42,6 @@ namespace ATM_Machine
 
                         if (IsAuth(password_input: userPin, password: userPassword))
                         {
-                            Console.WriteLine("User " + selectedUserId + " is authenticated");
                             User currentUser = new User(
                                     userId: selectedUserId,
                                     userFirstName: Convert.ToString(row[1]),
@@ -51,7 +51,9 @@ namespace ATM_Machine
                                     agencyCode: Convert.ToInt32(row[5]),
                                     availableBalance: Convert.ToDouble(row[6])
                                 );
-                            Console.WriteLine(currentUser.availableBalance);
+                            Console.WriteLine("User " + currentUser.fullName + " is authenticated");
+                            string result = currentUser.PerformAction(action: action, amount: amount);
+                            Console.WriteLine(result);
                         }
                         else
                         {
