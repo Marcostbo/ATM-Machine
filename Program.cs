@@ -14,10 +14,11 @@ namespace ATM_Machine
     {
         static void Main(string[] args)
         {
+            // User data input
             int selectedUserId = 13;
-            int accountCode = 17598;
-            int agencyCode = 5995;
             int userPin = 123123;
+            
+            // Action input
             string action = "Deposit";
             float amount = 1000;
 
@@ -37,9 +38,20 @@ namespace ATM_Machine
                     {
                         currentRow = row;
                         int userPassword = Convert.ToInt32(row[3]);
-                        if (isAuth(password_input: userPin, password: userPassword))
+
+                        if (IsAuth(password_input: userPin, password: userPassword))
                         {
-                            Console.WriteLine("User is authenticated");
+                            Console.WriteLine("User " + selectedUserId + " is authenticated");
+                            User currentUser = new User(
+                                    userId: selectedUserId,
+                                    userFirstName: Convert.ToString(row[1]),
+                                    userLastName: Convert.ToString(row[2]),
+                                    userPin: userPin,
+                                    accountCode: Convert.ToInt32(row[4]),
+                                    agencyCode: Convert.ToInt32(row[5]),
+                                    availableBalance: Convert.ToDouble(row[6])
+                                );
+                            Console.WriteLine(currentUser.availableBalance);
                         }
                         else
                         {
@@ -51,7 +63,7 @@ namespace ATM_Machine
             }
         }
 
-        static bool isAuth(int password_input, int password)
+        static bool IsAuth(int password_input, int password)
         {
             if (password_input == password)
             {
